@@ -1,0 +1,285 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+body{
+background: linear-gradient(-45deg,#020617,#0f172a,#1e293b,#020617);
+background-size: 400% 400%;
+animation: gradientMove 12s ease infinite;
+color:#f1f5f9;
+}
+@keyframes gradientMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* progress bar */
+#progressBar{
+position:fixed;
+top:0;
+left:0;
+height:5px;
+background:#38bdf8;
+width:0%;
+z-index:1000;
+}
+
+/* navbar */
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 10%;
+background: linear-gradient(135deg,#020617,#071630);
+backdrop-filter: blur(10px);
+position:sticky;
+top:0;
+z-index:999;
+}
+nav h2{
+color:#38bdf8;
+}
+nav ul{
+display:flex;
+list-style:none;
+gap:30px;
+}
+nav a{
+text-decoration:none;
+color:white;
+position:relative;
+padding-bottom:5px;
+}
+nav a::after{
+content:"";
+position:absolute;
+left:0;
+bottom:0;
+width:0%;
+height:2px;
+background:#38bdf8;
+transition:0.3s;
+}
+nav a:hover::after{
+width:100%;
+}
+
+/* hero */
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:80px;
+padding:0 10%;
+background: linear-gradient(135deg,#020617 0%, #071630 40%, #0f172a 100%);
+}
+.hero img{
+width:260px;
+height:260px;
+border-radius:50%;
+object-fit:cover;
+border:4px solid rgba(56,189,248,0.3);
+box-shadow:
+0 0 40px rgba(56,189,248,0.2),
+0 10px 40px rgba(0,0,0,0.6);
+transition:0.4s;
+}
+.hero img:hover{
+transform:scale(1.05);
+box-shadow:
+0 0 60px rgba(56,189,248,0.4),
+0 15px 50px rgba(0,0,0,0.7);
+}
+.hero-text h1{
+font-size:48px;
+font-weight:600;
+line-height:1.2;
+}
+.hero-text span{
+color:#38bdf8;
+}
+.hero-text p{
+margin-top:10px;
+font-size:18px;
+color:#cbd5f5;
+}
+.hero button{
+margin-top:25px;
+padding:14px 30px;
+border:none;
+border-radius:8px;
+font-weight:600;
+cursor:pointer;
+background: linear-gradient(135deg,#38bdf8,#0ea5e9);
+color:#021018;
+transition:all 0.3s ease;
+}
+.hero button:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(56,189,248,0.4);
+}
+@media (max-width:900px){
+.hero{
+flex-direction:column;
+text-align:center;
+gap:40px;
+}
+.hero img{
+width:200px;
+height:200px;
+}
+.hero-text h1{
+font-size:36px;
+}
+}
+
+/* sections */
+section{
+padding:80px 10%;
+}
+
+/* section titles */
+.section-title{
+font-size:28px;
+margin-bottom:40px;
+position:relative;
+display:inline-block;
+}
+.section-title::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-8px;
+width:0%;
+height:3px;
+background:#38bdf8;
+transition:0.6s;
+}
+section:hover .section-title::after{
+width:100%;
+}
+
+/* about */
+.about p{
+max-width:700px;
+line-height:1.7;
+}
+
+/* skills grid */
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:25px;
+}
+
+/* cards */
+.card{
+background:#1e293b;
+padding:30px;
+border-radius:12px;
+box-shadow:0 10px 20px rgba(0,0,0,0.3);
+transition:0.3s;
+text-align:center;
+}
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 15px 35px rgba(0,0,0,0.5);
+}
+
+/* projects */
+.projects-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+overflow:hidden;
+}
+.project img{
+width:100%;
+height:200px;
+text-align: center;
+object-fit:cover;
+border-radius:10px;
+margin-bottom:15px;
+}
+.project:hover img{
+transform:scale(1.1);
+}
+.project-title{
+text-align:justify;
+}
+.tech-title{
+margin-top:10px;
+font-weight:600;
+}
+.tech-list{
+text-align:justify;
+margin-left:20px;
+margin-top:5px;
+}
+
+/* contact */
+.contact-section{
+padding:80px 10%;
+background:linear-gradient(135deg,#020617,#1e293b);
+color:white;
+}
+
+.contact-section h2{
+font-size:32px;
+margin-bottom:15px;
+color:#38bdf8;
+}
+
+.contact-text{
+margin-bottom:30px;
+font-size:16px;
+color:#cbd5f5;
+}
+
+.contact-card{
+background:#0f172a;
+padding:30px;
+border-radius:12px;
+max-width:500px;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+.contact-card p{
+margin-bottom:15px;
+font-size:16px;
+}
+
+.contact-card a{
+color:#38bdf8;
+text-decoration:none;
+transition:0.3s;
+}
+
+.contact-card a:hover{
+color:white;
+text-shadow:0 0 8px #38bdf8;
+}
+
+/* fade animation */
+.fade{
+opacity:1;
+transform:translateY(40px);
+transition:1s ease;
+}
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+footer{
+text-align:center;
+padding:30px;
+background:#020617;
+margin-top:60px;
+color:#94a3b8;
+}
